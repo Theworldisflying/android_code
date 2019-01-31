@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">EventBus</string>
+    <string name="main_sec_btn">sec按钮</string>
+    <string name="main_sec_back_text">这是主页TextView</string>
+    <string name="main_sec_sticky_btn_text">发送粘性事件</string>
+
+    <string name="sec_back_btn">返回</string>
+    <string name="sec_sticky_btn_text">接收粘性事件</string>
+</resources>
