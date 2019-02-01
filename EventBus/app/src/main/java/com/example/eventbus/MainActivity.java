@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         Button postBtn = (Button)findViewById(R.id.main_sec_sticky_btn);
         postBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,12 +47,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 //    接收消息
+    //处理消息的方法名字可以随便取。但是需要加一个注解@Subscribe，并且要指定线程模型
     // 5种线程模式
     // POSTING MAIN  MAIN_ORDERED  BACKGROUND ASYNC
     @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
     public <T> void onEvent(CustomEvent<T> customEvent) {
         switch (customEvent.getFlag()){
             case EventType.Sec.SEC_BACKEVENT:
+                // 获取接收值
                 String backMsg = (String)customEvent.getData();
                 textView.setText(backMsg);
                 break;
